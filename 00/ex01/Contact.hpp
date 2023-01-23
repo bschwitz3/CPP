@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:33:28 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/23 15:39:25 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:28:00 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Contact
 	public:
 		Contact(void);
 		~Contact(void);
-
 		void		set_firstname(std::string str);
 		void		set_lastname(std::string str);
 		void		set_nickname(std::string str);
@@ -39,9 +38,6 @@ class Contact
 		std::string	get_nickname(void) const;
 		std::string	get_phonenumber(void) const;
 		std::string	get_darkestsecret(void) const;
-
 };
-
-
 
 #endif

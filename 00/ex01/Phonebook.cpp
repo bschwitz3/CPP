@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:44:56 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/23 16:16:52 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:54:10 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,39 +28,37 @@ void	Phonebook::add(void)
 	std::string	str;
 
 	str = "";
-	if (this->_index > 7)
-		std::cout << "Warning: overwriting info about " << this->_contacts[this->_index % 8].get_firstname() << std::endl;
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter first name : ";
+		std::cout << "Enter a first name: ";
 		if (std::getline(std::cin, str) && str != "")
-			this->_contacts[this->_index & 8].set_firstname(str);
+			this->_contacts[this->_index % 8].set_firstname(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter last name : ";
+		std::cout << "Enter a last name: ";
 		if (std::getline(std::cin, str) && str != "")
 			this->_contacts[this->_index % 8].set_lastname(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter nickname : ";
+		std::cout << "Enter a nickname: "; 
 		if (std::getline(std::cin, str) && str != "")
 			this->_contacts[this->_index % 8].set_nickname(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter phone number : ";
+		std::cout << "Enter a phone number: ";
 		if (std::getline(std::cin, str) && str != "")
 			this->_contacts[this->_index % 8].set_phonenumber(str);
 	}
 	str = "";
 	while (!std::cin.eof() && str == "")
 	{
-		std::cout << "Enter darkest secret : ";
+		std::cout << "Enter a darkest secret: ";
 		if (std::getline(std::cin, str) && str != "")
 		{
 			this->_contacts[this->_index % 8].set_darkestsecret(str);
@@ -84,8 +82,8 @@ void	Phonebook::search(void)
 		std::cout << "Select an index : ";
 		if (std::getline(std::cin, str) && str != "")
 		{
-			if (str.size() == 1 && str[0] > '0' && str[0] < '9' && \
-				this->_contacts[str[0] - 1 - '0'].get_firstname().size())
+			if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && \
+					this->_contacts[str[0] - 1 - '0'].get_firstname().size())
 				break;
 		}
 		if (str != "")

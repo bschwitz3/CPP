@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 12:35:11 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/23 16:16:54 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:29:09 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,9 @@ class Phonebook
 	public:
 		Phonebook(void);
 		~Phonebook(void);
-		
 		void	add(void);
 		void	search(void);
 		void	print(Contact contact);
-
 		Contact	get_contact(int index);
 };
 
