@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 12:26:40 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/24 13:42:21 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/01/24 14:54:28 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/01/24 16:01:26 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "Zombie.hpp"
 
-
-int main()
+Zombie*	zombieHorde( int N, std::string name )
 {
-	Phonebook	pb;
-	std::string	str;
-
-	while (str != "EXIT")
-	{
-		std::cout << "Enter a command > ";
-		std::getline(std::cin, str);
-		if (str == "ADD")
-			pb.add();
-		else if (str == "SEARCH")
-			pb.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
-	return (0);
+	Zombie *horde = new Zombie[N];
+	while (N >= 0)
+		horde[N--].setName(name);
+	return (horde);
 }

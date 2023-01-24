@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:44:56 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/23 16:54:10 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/24 13:50:07 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	Phonebook::search(void)
 {
 	std::string	str;
 
-	if (!search_ui(this->_contacts))
+	if (!search_print(this->_contacts))
 	{
 		std::cout << std::endl << "Phonebook is empty !" << std::endl;
 		return;
@@ -93,7 +93,7 @@ void	Phonebook::search(void)
 		this->print(this->_contacts[str[0] - 1 - '0']);
 }
 
-int	search_ui(Contact contacts[8])
+int	search_print(Contact contacts[8])
 {
 	char		c;
 	int			i;

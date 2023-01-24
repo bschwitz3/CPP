@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 12:26:40 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/24 13:42:21 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/01/24 14:10:48 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/01/24 14:32:51 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "Zombie.hpp"
 
-
-int main()
+Zombie::Zombie(std::string name)
 {
-	Phonebook	pb;
-	std::string	str;
-
-	while (str != "EXIT")
-	{
-		std::cout << "Enter a command > ";
-		std::getline(std::cin, str);
-		if (str == "ADD")
-			pb.add();
-		else if (str == "SEARCH")
-			pb.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
-	return (0);
+	this->_name = name;
+	std::cout << "Zombie " << this->_name << " created." << std::endl;
 }
+
+Zombie::~Zombie(void)
+{
+	std::cout << "Zombie " << this->_name << " destroyed." << std::endl;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+

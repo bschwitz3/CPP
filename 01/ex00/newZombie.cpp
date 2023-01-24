@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 12:26:40 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/24 13:42:21 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/01/24 14:10:51 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/01/24 14:35:30 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
-#include "Phonebook.hpp"
+#include "Zombie.hpp"
 
-
-int main()
+Zombie* newZombie( std::string name )
 {
-	Phonebook	pb;
-	std::string	str;
-
-	while (str != "EXIT")
-	{
-		std::cout << "Enter a command > ";
-		std::getline(std::cin, str);
-		if (str == "ADD")
-			pb.add();
-		else if (str == "SEARCH")
-			pb.search();
-		if (std::cin.eof())
-		{
-			std::cout << std::endl;
-			return (0);
-		}
-	}
-	return (0);
+	return (new Zombie(name));
 }
