@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:52:46 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/25 18:02:53 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/27 19:01:45 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,26 @@ class	Fixed
 		Fixed(void);
 		Fixed(const int num);
 		Fixed(const float num);
-		~Fixed(void);
 		Fixed(Fixed const &copy);
+		~Fixed(void);
 
 		Fixed	&operator=(Fixed const &copy);
+		
 		Fixed	operator+(Fixed const &copy) const;
 		Fixed	operator-(Fixed const &copy) const;
 		Fixed	operator*(Fixed const &copy) const;
 		Fixed	operator/(Fixed const &copy) const;
+		
 		bool	operator==(Fixed const &copy) const;
 		bool	operator!=(Fixed const &copy) const;
 		bool	operator<=(Fixed const &copy) const;
 		bool	operator>=(Fixed const &copy) const;
 		bool	operator<(Fixed const &copy) const;
 		bool	operator>(Fixed const &copy) const;
+		
 		Fixed	&operator++(void);
 		Fixed	&operator--(void);
+		
 		Fixed	operator++(int value);
 		Fixed	operator--(int value);
 

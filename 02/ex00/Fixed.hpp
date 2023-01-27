@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 11:50:39 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/25 13:33:08 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/27 16:50:43 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@ class	Fixed
 		int const static	_bit;
 	public:
 		Fixed(void);
-		~Fixed(void);
 		Fixed(Fixed const &copy);
+		~Fixed(void);
+		
 		Fixed	&operator=(Fixed const &copy);
+		
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
-
 };
 
 #endif
