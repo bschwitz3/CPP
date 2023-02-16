@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:30:23 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/27 18:13:40 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:22:38 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class	Fixed
 	private:
 		int					_val;
 		int const static	_bit;
+		
 	public:
 		Fixed(void);
 		Fixed(const int num);
