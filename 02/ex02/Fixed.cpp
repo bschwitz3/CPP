@@ -6,28 +6,11 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:52:40 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/27 19:01:44 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/16 15:41:11 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-static	float ft_pow(float base, int exp)
-{
-	float	result;
-
-	if (!exp)
-		return (1);
-	if (exp < 0)
-	{
-		base = 1 / base;
-		exp *= -1;
-	}
-	result = base;
-	while (--exp)
-		result *= base;
-	return (result);
-}
 
 const int	Fixed::_bit = 8;
 
@@ -35,12 +18,14 @@ Fixed::Fixed(void): _val(0)
 {
 }
 
-Fixed::Fixed(const int value): _val(value * ft_pow(2, this->_bit))
+Fixed::Fixed(const int value)
 {  
-} 
+	this->_val = value << this->_bit;
+}
 
-Fixed::Fixed(const float value): _val(value * ft_pow(2, this->_bit))
-{  
+Fixed::Fixed(const float value)
+{
+	this->_val = roundf(value * (1 << this->_bit));
 } 
 
 Fixed::~Fixed(void)
@@ -54,12 +39,12 @@ Fixed::Fixed(Fixed const &copy)
 
 float	Fixed::toFloat(void) const
 {
-	return (this->_val * ft_pow(2, -this->_bit));
+	return ((float)this->_val / (float)(1 << this->_bit));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (this->_val * ft_pow(2, -this->_bit));
+	return (this->_val >> this->_bit);
 }
 
 Fixed	&Fixed::operator=(Fixed const &copy)

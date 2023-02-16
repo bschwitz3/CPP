@@ -6,28 +6,11 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:30:26 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/25 16:59:55 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:27:46 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-static	float ft_pow(float base, int exp)
-{
-	float	result;
-
-	if (!exp)
-		return (1);
-	if (exp < 0)
-	{
-		base = 1 / base;
-		exp *= -1;
-	}
-	result = base;
-	while (--exp)
-		result *= base;
-	return (result);
-}
 
 const int	Fixed::_bit = 8;
 
@@ -36,14 +19,16 @@ Fixed::Fixed(void): _val(0)
 	std::cout << "Default constructor called" << std::endl; 
 }
 
-Fixed::Fixed(const int num): _val(num * ft_pow(2, this->_bit))
+Fixed::Fixed(const int num)
 {
 	std::cout << "Fixed object created with int constructor" << std::endl; 
+	this->_val = num << this->_bit;
 } 
 
-Fixed::Fixed(const float num): _val(num * ft_pow(2, this->_bit))
+Fixed::Fixed(const float num)
 {
 	std::cout << "Fixed object created with float constructor" << std::endl; 
+	this->_val = roundf(num * (1 << this->_bit));
 } 
 
 Fixed::~Fixed(void)
@@ -59,12 +44,12 @@ Fixed::Fixed(Fixed const & copy)
 
 float	Fixed::toFloat(void) const
 {
-	return (this->_val * ft_pow(2, -this->_bit));
+	return ((float)this->_val / (float)(1 << this->_bit));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (this->_val * ft_pow(2, -this->_bit));
+	return (this->_val >> this->_bit);
 }
 
 Fixed	&Fixed::operator=(const Fixed &copy)

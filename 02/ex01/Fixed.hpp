@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 16:30:23 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/08 19:22:38 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/16 14:29:23 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <math.h>
 
 class	Fixed
 {
