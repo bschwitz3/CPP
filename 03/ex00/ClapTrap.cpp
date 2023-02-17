@@ -6,35 +6,32 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:49:02 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/16 19:40:26 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/17 10:48:57 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
-{}
+ClapTrap::ClapTrap(): _name(""), _hitPoint(10), _energyPoint(10), _attackDamage(0)
+{
+	std::cout << "New ClapTrap created." << std::endl;
+}
 
 ClapTrap::~ClapTrap()
 {
 	std::cout << "Claptrap : " << this->_name << " destroyed." << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name)
+ClapTrap::ClapTrap(std::string name): _name(name), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
-	std::cout << "Claptrap : " << name << " created." << std::endl;
-	this->_name = name;
-	this->_hitPoint = 10;
-	this->_energyPoint = 10;
-	this->_attackDamage = 0;
+	std::cout << "New Claptrap called " << name << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->_energyPoint >= 1)
 	{
-		std::cout << this->_name << " attacks, " << target << " causing " << this->_hitPoint << " points of dammage!" << std::endl;
-		// target takedamage
+		std::cout << this->_name << " attacks, " << target << " causing " << this->_attackDamage << " points of dammage!" << std::endl;
 		this->_energyPoint--;
 	}
 	else
@@ -43,10 +40,10 @@ void	ClapTrap::attack(const std::string& target)
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	this->_hitPoint =- amount;
+	this->_hitPoint -= amount;
 	std::cout << this->_name << " loses " << amount << " hit points." << std::endl;
 	if (this->_hitPoint <= 0)
-		this->~ClapTrap;
+		std::cout << this->_name << " is now dead." << std::endl;
 }
 
 
@@ -55,6 +52,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->_energyPoint >= 1)
 	{
 		std::cout << this->_name << " regenerates " << amount << " hit points." << std::endl;
+		this->_hitPoint += amount;
 		this->_energyPoint--;
 	}
 	else
