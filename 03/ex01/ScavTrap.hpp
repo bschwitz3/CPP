@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 11:49:20 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/17 13:32:28 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/17 13:56:11 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 		
 		void	guardGate();
-	
 };
 
 

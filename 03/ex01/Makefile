@@ -6,11 +6,11 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 17:17:55 by bschwitz          #+#    #+#              #
-#    Updated: 2023/02/16 17:18:26 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/02/17 13:57:54 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
