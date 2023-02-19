@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 16:49:02 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/17 13:55:48 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/19 10:06:48 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Constructor / Destructor
 
-ClapTrap::ClapTrap(): _name(""), _hitPoint(10), _energyPoint(10), _attackDamage(0)
+ClapTrap::ClapTrap(): _name("default"), _hitPoint(10), _energyPoint(10), _attackDamage(0)
 {
 	std::cout << "New ClapTrap created." << std::endl;
 }

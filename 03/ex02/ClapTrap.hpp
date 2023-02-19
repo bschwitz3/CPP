@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 17:18:30 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/19 10:05:59 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/02/16 16:48:47 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/02/17 13:56:02 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-int	main()
+#include <iostream>
+
+class ClapTrap
 {
-	ClapTrap	Claptrap("tac");
-	ScavTrap	Scavtrap("tic");
+	protected:
+		std::string	_name;
+		int			_hitPoint;
+		int			_energyPoint;
+		int			_attackDamage;
 
-	Claptrap.attack("cible");
-	Scavtrap.takeDamage(10);
-	Scavtrap.attack("dinosaure");
-	Claptrap.beRepaired(1);
+	public:
+		ClapTrap(void);
+		ClapTrap(std::string name);
+		~ClapTrap(void);
 
-	for (int i = 0; i < 10; i++)
-		Claptrap.attack("village");
+		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
+};
 
-	Scavtrap.guardGate();
-	Scavtrap.beRepaired(3);
 
-	return (0);
-}
+
+#endif

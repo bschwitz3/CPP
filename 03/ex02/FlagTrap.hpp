@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FlagTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 17:18:30 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/19 10:05:59 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/02/19 10:16:39 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/02/19 10:40:18 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FLAGTRAP_HPP
+#define FLAGTRAP_HPP
+
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
 
-int	main()
+class	FlagTrap : public ClapTrap
 {
-	ClapTrap	Claptrap("tac");
-	ScavTrap	Scavtrap("tic");
+	public:
+		FlagTrap();
+		FlagTrap(std::string name);
+		~FlagTrap();
 
-	Claptrap.attack("cible");
-	Scavtrap.takeDamage(10);
-	Scavtrap.attack("dinosaure");
-	Claptrap.beRepaired(1);
+		void	highFivesGuys(void);
+};
 
-	for (int i = 0; i < 10; i++)
-		Claptrap.attack("village");
-
-	Scavtrap.guardGate();
-	Scavtrap.beRepaired(3);
-
-	return (0);
-}
+#endif
