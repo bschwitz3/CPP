@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:51:10 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:16:17 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int main()
 	const Animal* i = new Cat();
 	delete j;//should not create a leak
 	delete i;
+
+	const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+
+	for ( int i = 0; i < 4; i++ )
+		delete animals[i];
 
 	return 0;
 }

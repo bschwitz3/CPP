@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:28:19 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:47:53 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/27 11:51:13 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Dog: public Animal
 	public:
 		Dog();
 		~Dog();
+
+		void	makeSound() const;
 };
 
 #endif

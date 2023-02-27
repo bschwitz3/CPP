@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                        :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:14:50 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 19:05:04 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/27 12:04:35 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,15 @@ Animal::~Animal(void)
 
 void	Animal::makeSound(void) const
 {
+	/*
 	if (this->_type == "Dog")
 		std::cout << "Woouuff Woouufff !!" << std::endl;
 	else if (this->_type == "Cat")
 		std::cout << "Miaouuu Miaouuu !!" << std::endl;
 	else
 		std::cout << "This Animal is not a Dog or a Cat, set his type!" << std::endl;
+	*/
+	std::cout << "makeSound from class Animal executed" << std::endl;
 }
 
 std::string	Animal::getType(void) const

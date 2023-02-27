@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 19:15:19 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/27 11:53:31 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ int main()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	delete j;//should not create a leak
+	j->makeSound();
+	i->makeSound();
+
+	delete j;
 	delete i;
 
 	return 0;

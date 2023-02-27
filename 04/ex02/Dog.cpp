@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:09:25 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:47:40 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/27 11:52:11 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,9 @@ Dog::~Dog(void)
 {
 	delete this->_brain;
 	std::cout << "Dog destroyed." << std::endl;
+}
+
+void	Dog::makeSound(void) const
+{
+	std::cout << "Woouuff Woouufff !!" << std::endl;
 }
