@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:44:25 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/22 13:28:55 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:52:29 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Cat: public Animal
 {
 	public:
-		Cat(std::string name);
+		Cat();
 		~Cat();
 };
 

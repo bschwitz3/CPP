@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:14:53 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/22 12:40:37 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:59:08 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ class Animal
 	public:
 		Animal(void);
 		Animal(std::string name);
-		~Animal(void);
+		virtual ~Animal(void);
 
-		void	makeSound();
+		void		makeSound() const;
+		std::string	getType() const;
 };
 
 

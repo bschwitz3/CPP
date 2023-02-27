@@ -6,13 +6,13 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/22 12:07:09 by bschwitz          #+#    #+#              #
-#    Updated: 2023/02/23 09:20:47 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/02/23 18:26:29 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = polymorphisme
 
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 

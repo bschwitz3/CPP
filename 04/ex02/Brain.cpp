@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 13:28:19 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:52:27 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/02/23 18:10:01 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/02/23 18:28:25 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include "Brain.hpp"
 
-#include "Animal.hpp"
-
-class Dog: public Animal
+Brain::Brain(void)
 {
-	public:
-		Dog();
-		~Dog();
-};
+	std::cout << "New brain created." << std::endl;
+}
 
-#endif
+Brain::~Brain(void)
+{
+	std::cout << "brain destroyed." << std::endl;
+
+}

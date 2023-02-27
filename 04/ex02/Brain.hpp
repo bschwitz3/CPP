@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 13:28:19 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:52:27 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/02/23 18:07:24 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/02/23 18:27:04 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Dog: public Animal
+class Brain
 {
+	private:
+		std::string	_ideas[100];
 	public:
-		Dog();
-		~Dog();
+		Brain();
+		~Brain();
 };
 
 #endif

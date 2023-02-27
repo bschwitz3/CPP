@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 13:28:19 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:52:27 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/02/22 12:14:53 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/02/23 17:57:37 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Dog: public Animal
+class Animal
 {
+	protected:
+		std::string	_type;
 	public:
-		Dog();
-		~Dog();
+		Animal(void);
+		Animal(std::string name);
+		virtual ~Animal(void);
+
+		void	makeSound() const;
+		std::string	getType() const;
 };
+
 
 #endif

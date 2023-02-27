@@ -6,15 +6,15 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:09:25 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/22 13:28:10 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:53:22 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(std::string name)
+Dog::Dog(void)
 {
-	this->_type = name;
+	this->_type = "Dog";
 	std::cout << "New Dog created." << std::endl;
 }
 

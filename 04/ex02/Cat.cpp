@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 12:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:58:41 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/02/22 13:03:45 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/02/23 18:47:26 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
-int main()
+Cat::Cat(void)
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
-	return (0);
+	std::cout << "New Cat created." << std::endl;
+	this->_type = "Cat";
+	try
+	{
+		this->_brain = new Brain();
+	}
+	catch (const std::bad_alloc& e) 
+	{
+		std::cout << "Memory Allocation is failed : " << e.what() << std::endl;
+	}
+}
+
+Cat::~Cat(void)
+{
+	delete this->_brain;
+	std::cout << "Cat destroyed." << std::endl;
 }
