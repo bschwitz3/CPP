@@ -1,47 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 13:03:45 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:28:34 by bschwitz         ###   ########.fr       */
+/*   Created: 2023/03/27 15:05:52 by bschwitz          #+#    #+#             */
+/*   Updated: 2023/03/27 15:08:11 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "AAnimal.hpp"
 
-Cat::Cat(void)
+AAnimal::AAnimal()
 {
-	this->_type = "Cat";
-	std::cout << "New Cat created." << std::endl;
+	this->_type = "Aanimal";
+	std::cout << "AAnimal created\n";
 }
 
-Cat::~Cat(void)
+AAnimal::~AAnimal()
 {
-	std::cout << "Cat destroyed." << std::endl;
+	std::cout << "AAnimal destroyed\n";
 }
 
-Cat::Cat(Cat & ref)
+AAnimal::AAnimal(AAnimal const & ref)
 {
 	this->_type = ref.getType();
-	std::cout << "A cat was constructed from copy\n";
+	std::cout << "AAnimal created from a copy\n";
 }
 
-Cat & Cat::operator=(Cat const & rhs)
+AAnimal & AAnimal::operator=(AAnimal const & rhs)
 {
-	this->_type = rhs._type;
+	this->_type = rhs.getType();
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
+void AAnimal::makeSound() const
 {
-	std::cout << "Miaouuu Miaouuu !!" << std::endl;
+	std::cout << "this AAnimal is not a cat or dog, set it to hear his noise\n";
 }
 
-std::string Cat::getType( void ) const
+std::string AAnimal::getType( void ) const
 {
 	return (this->_type);
 }
-

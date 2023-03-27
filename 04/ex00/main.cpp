@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:58:41 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:40:11 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,29 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
-	delete meta;
-	delete j;
-	delete i;
-	return (0);
+	const Animal* animal = new Animal();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
+
+	std::cout << std::endl;
+	std::cout << "Dog->getType " << dog->getType() << std::endl;
+	std::cout << "Cat->getType " << cat->getType() << std::endl;
+	cat->makeSound(); //will output the cat sound! (not the Animal)
+	dog->makeSound(); //will output the dog sound! (not the Animal)
+	animal->makeSound(); //will output the animal sound
+
+	std::cout << std::endl;
+	const WrongAnimal* wrong_animal = new WrongAnimal();
+	const WrongAnimal* wrong_cat = new WrongCat();
+
+	std::cout << std::endl;
+	wrong_cat->makeSound();
+	wrong_animal->makeSound();
+
+	std::cout << std::endl;
+	delete animal;
+	delete dog;
+	delete cat;
+	delete wrong_cat;
+	delete wrong_animal;
 }

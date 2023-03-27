@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:14:50 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:38:07 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:33:17 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,19 @@
 Animal::Animal(void)
 {
 	std::cout << "New Animal created." << std::endl;
+	this->_type = "animal";
 }
 
-Animal::Animal(std::string name): _type(name)
+Animal::Animal(Animal & ref)
 {
-	std::cout << "New Animal that is a " << name << " created." << std::endl;
+	this->_type = ref._type;
+	std::cout << "New Animal created from a copy\n";
+}
+
+Animal & Animal::operator=(Animal const & rhs)
+{
+	this->_type = rhs._type;
+	return (*this);
 }
 
 Animal::~Animal(void)
@@ -36,15 +44,19 @@ Animal::~Animal(void)
 
 void	Animal::makeSound(void) const
 {
-	if (this->_type == "Dog")
-		std::cout << "Woouuff Woouufff !!" << std::endl;
-	else if (this->_type == "Cat")
-		std::cout << "Miaouuu Miaouuu !!" << std::endl;
-	else
-		std::cout << "This Animal is not a Dog or a Cat, set his type!" << std::endl;
+	// if (this->_type == "Dog")
+	// 	std::cout << "Woouuff Woouufff !!" << std::endl;
+	// else if (this->_type == "Cat")
+	// 	std::cout << "Miaouuu Miaouuu !!" << std::endl;
+	// else
+	// 	std::cout << "This Animal is not a Dog or a Cat, set his type!" << std::endl;
+	
+	std::cout << "This Animal is not a Dog or a Cat, set his type!" << std::endl;
+
 }
 
 std::string	Animal::getType(void) const
 {
 	return (this->_type);
 }
+
