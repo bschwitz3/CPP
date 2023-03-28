@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:07:24 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:52:56 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:44:27 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ class Brain
 		Brain();
 		~Brain();
 		Brain(Brain & ref);
-		Brain & operator=(Brain const & rhs);
+		Brain & operator=(Brain const & ref);
+		
 		std::string *getIdeas();
 };
 

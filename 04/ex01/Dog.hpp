@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:28:19 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 15:00:06 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:26:55 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ class Dog: public Animal
 	public:
 		Dog();
 		~Dog();
-
 		Dog(Dog & ref);
-		Dog & operator=(Dog const & rhs);
+		Dog & operator=(Dog const & ref);
 		
-		void makeSound() const;
-		std::string getType( void ) const;
-		Brain *getBrain( void ) const;
-		void compareTo(Dog const & other_dog) const;
+		void		makeSound() const;
+		std::string	getType(void) const;
+		Brain		*getBrain(void) const;
+
+		void		printBrain(void) const;
 };
 
 #endif

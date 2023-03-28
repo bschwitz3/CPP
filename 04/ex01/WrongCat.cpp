@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:12:11 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 18:50:13 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:58:45 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,28 @@
 
 WrongCat::WrongCat(void)
 {
-	std::cout << "New WrongCat created." << std::endl;
 	this->_type = "WrongCat";
-	try
-	{
-		this->_brain = new Brain();
-	}
-	catch (const std::bad_alloc& e) 
-	{
-		std::cout << "Memory Allocation is failed : " << e.what() << std::endl;
-	}
+	std::cout << "New WrongCat created." << std::endl;
 }
 
 WrongCat::~WrongCat(void)
 {
-	delete this->_brain;
 	std::cout << "WrongCat destroyed." << std::endl;
+}
+
+WrongCat::WrongCat(WrongCat & ref)
+{
+	this->_type = ref.getType();
+	std::cout << "A WrongCat created from copy\n";
+}
+
+WrongCat & WrongCat::operator=(WrongCat const & ref)
+{
+	this->_type = ref._type;
+	return (*this);
+}
+
+void WrongCat::makeSound() const
+{
+	std::cout << "Fake miaouuuu\n";
 }

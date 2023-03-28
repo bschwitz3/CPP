@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:28:19 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:36:02 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:26:24 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Dog: public Animal
 		Dog();
 		~Dog();
 		Dog(Dog & ref);
-		Dog & operator=(Dog const & rhs);
+		Dog & operator=(Dog const & ref);
 		
-		void makeSound() const;
-		std::string getType( void ) const;
+		void		makeSound() const;
+		std::string	getType( void ) const;
 };
 
 #endif

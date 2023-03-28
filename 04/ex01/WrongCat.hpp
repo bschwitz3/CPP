@@ -14,15 +14,17 @@
 #define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
-#include "Brain.hpp"
 
 class WrongCat: public WrongAnimal
 {
-	private:
-		Brain *_brain;
 	public:
 		WrongCat();
 		~WrongCat();
+		WrongCat(WrongCat & ref);
+		WrongCat & operator=(WrongCat const & ref);
+		
+		void makeSound() const;
+
 };
 
 #endif

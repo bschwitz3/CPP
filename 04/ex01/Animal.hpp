@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:14:53 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:47:30 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:39:57 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 		Animal(void);
 		virtual ~Animal(void);
 		Animal(const Animal & ref);
-		Animal & operator=(Animal const & rhs);
+		Animal & operator=(Animal const & ref);
 
 		virtual void	makeSound() const;
 		virtual std::string	getType() const;

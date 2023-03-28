@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:05:52 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 15:08:11 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:42:15 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ AAnimal::AAnimal(AAnimal const & ref)
 	std::cout << "AAnimal created from a copy\n";
 }
 
-AAnimal & AAnimal::operator=(AAnimal const & rhs)
+AAnimal & AAnimal::operator=(AAnimal const & ref)
 {
-	this->_type = rhs.getType();
+	this->_type = ref.getType();
 	return (*this);
 }
 

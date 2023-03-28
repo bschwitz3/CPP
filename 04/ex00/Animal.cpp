@@ -6,30 +6,16 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:14:50 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:33:17 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:26:44 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-// constructor / destructor
-
 Animal::Animal(void)
 {
 	std::cout << "New Animal created." << std::endl;
 	this->_type = "animal";
-}
-
-Animal::Animal(Animal & ref)
-{
-	this->_type = ref._type;
-	std::cout << "New Animal created from a copy\n";
-}
-
-Animal & Animal::operator=(Animal const & rhs)
-{
-	this->_type = rhs._type;
-	return (*this);
 }
 
 Animal::~Animal(void)
@@ -40,7 +26,18 @@ Animal::~Animal(void)
 		std::cout << "Animal destroyed." << std::endl;
 }
 
-// methods
+Animal::Animal(Animal & ref)
+{
+	this->_type = ref._type;
+	std::cout << "New Animal created from a copy\n";
+}
+
+Animal & Animal::operator=(Animal const & ref)
+{
+	this->_type = ref._type;
+	return (*this);
+}
+
 
 void	Animal::makeSound(void) const
 {

@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:09:25 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:30:04 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:25:24 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ Dog::Dog(Dog & ref)
 	std::cout << "A dog was constructed from copy\n";
 }
 
-Dog & Dog::operator=(Dog const & rhs)
+Dog & Dog::operator=(Dog const & ref)
 {
-	this->_type = rhs._type;
+	this->_type = ref._type;
 	return (*this);
 }
 

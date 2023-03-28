@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 13:03:45 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:28:34 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:25:26 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ Cat::Cat(Cat & ref)
 	std::cout << "A cat was constructed from copy\n";
 }
 
-Cat & Cat::operator=(Cat const & rhs)
+Cat & Cat::operator=(Cat const & ref)
 {
-	this->_type = rhs._type;
+	this->_type = ref._type;
 	return (*this);
 }
 

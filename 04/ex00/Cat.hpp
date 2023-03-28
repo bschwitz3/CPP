@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:44:25 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:27:44 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:26:24 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ class Cat: public Animal
 		Cat();
 		~Cat();
 		Cat(Cat & ref);
-		Cat & operator=(Cat const & rhs);
+		Cat & operator=(Cat const & ref);
 
-		void	makeSound() const;
-		std::string getType( void ) const;
+		void		makeSound() const;
+		std::string	getType( void ) const;
 
 };
 

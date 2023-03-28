@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 15:04:13 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:37:31 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,35 +18,36 @@
 
 int main( void )
 {
+	// BASIC
 	const Animal* dog = new Dog();
 	const Animal* cat = new Cat();
-
 	std::cout << std::endl;
-
 	delete dog;
 	delete cat;
 
 	std::cout << std::endl;
 	std::cout << std::endl;
 
+	// REF & COPY
 	Dog medor;
 	Cat felix;
+
+	felix.printBrain();
+	std::cout << std::endl;
 
 	Dog & medor_ref = medor;
 	Cat & felix_ref = felix;
 
-	std::cout << std::endl << "creating copies" << std::endl;
+	felix_ref.printBrain();
+
 	Dog medor_copy(medor_ref);
 	Cat felix_copy(felix_ref);
 
-	Dog & medor_copy_ref = medor_copy;
-	Cat & felix_copy_ref = felix_copy;
+	felix_copy.printBrain();
 
-	std::cout << std::endl << "comparing" << std::endl;
-	medor.compareTo(medor_copy_ref);
-	felix.compareTo(felix_copy_ref);
 	std::cout << std::endl;
 
+	// TABLEAU
 	const Animal	*(animal_array[4]);
 	std::cout << std::endl;
 

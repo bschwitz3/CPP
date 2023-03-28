@@ -6,38 +6,42 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:12:18 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 09:17:41 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:58:05 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-// constructor / destructor
 
 WrongAnimal::WrongAnimal(void)
 {
 	std::cout << "New WrongAnimal created." << std::endl;
-}
-
-WrongAnimal::WrongAnimal(std::string name): _type(name)
-{
-	std::cout << "New WrongAnimal that is a " << name << " created." << std::endl;
+	this->_type = "wronganimal";
 }
 
 WrongAnimal::~WrongAnimal(void)
 {
-	if (this->_type != "")
-		std::cout << "WrongAnimal that is a "<< this->_type << " destroyed." << std::endl;
-	else
-		std::cout << "WrongAnimal destroyed." << std::endl;
+	std::cout << "WrongAnimal destroyed." << std::endl;
 }
 
-// methods
-
-void	WrongAnimal::makeSound(void)
+WrongAnimal::WrongAnimal(WrongAnimal & ref)
 {
-	if (this->_type == "WrongCat")
-		std::cout << "Wrong Miaouuu !!" << std::endl;
-	else
-		std::cout << "This WrongAnimal is not a WrongCat, set his type!" << std::endl;
+	this->_type = ref._type;
+	std::cout << "Wrong Animal created from a copy\n";
+}
+
+WrongAnimal & WrongAnimal::operator=(WrongAnimal const & ref)
+{
+	this->_type = ref._type;
+	return (*this);
+}
+
+void WrongAnimal::makeSound() const
+{
+	std::cout << "this WrongAnimal is not a WrongCat\n";
+}
+
+std::string WrongAnimal::getType(void) const
+{
+	return (this->_type);
 }

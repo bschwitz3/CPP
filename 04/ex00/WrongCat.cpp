@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:12:11 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:42:14 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:31:25 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ WrongCat::~WrongCat(void)
 WrongCat::WrongCat(WrongCat & ref)
 {
 	this->_type = ref.getType();
-	std::cout << "A cat created from copy\n";
+	std::cout << "A WrongCat created from copy\n";
 }
 
-WrongCat & WrongCat::operator=(WrongCat const & rhs)
+WrongCat & WrongCat::operator=(WrongCat const & ref)
 {
-	this->_type = rhs._type;
+	this->_type = ref._type;
 	return (*this);
 }
 

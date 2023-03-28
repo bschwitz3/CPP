@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 09:12:15 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/02/23 09:15:23 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:58:06 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ class WrongAnimal
 		std::string	_type;
 	public:
 		WrongAnimal(void);
-		WrongAnimal(std::string name);
-		~WrongAnimal(void);
+		virtual ~WrongAnimal(void);
+		WrongAnimal(WrongAnimal & ref);
+		WrongAnimal & operator=(WrongAnimal const & ref);
 
-		void	makeSound();
+		void		makeSound() const;
+		std::string	getType() const;
 };
 
 

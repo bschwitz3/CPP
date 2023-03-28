@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/03/27 14:40:11 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/03/28 10:34:54 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,30 @@ int main()
 	const Animal* cat = new Cat();
 
 	std::cout << std::endl;
+
+	std::cout << "Animal->getType " << animal->getType() << std::endl;
 	std::cout << "Dog->getType " << dog->getType() << std::endl;
 	std::cout << "Cat->getType " << cat->getType() << std::endl;
-	cat->makeSound(); //will output the cat sound! (not the Animal)
-	dog->makeSound(); //will output the dog sound! (not the Animal)
-	animal->makeSound(); //will output the animal sound
 
 	std::cout << std::endl;
+
+	animal->makeSound();
+	cat->makeSound();
+	dog->makeSound();
+
+	std::cout << std::endl;
+
+
 	const WrongAnimal* wrong_animal = new WrongAnimal();
 	const WrongAnimal* wrong_cat = new WrongCat();
 
 	std::cout << std::endl;
+
 	wrong_cat->makeSound();
 	wrong_animal->makeSound();
 
 	std::cout << std::endl;
+	
 	delete animal;
 	delete dog;
 	delete cat;
