@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrate.hpp                                    :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:57:50 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/25 17:46:46 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/04/26 11:51:02 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef BUREAUCRATE_HPP
-# define BUREAUCRATE_HPP
+# ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <string> 
 
-class Bureaucrate
+class Bureaucrat
 {
 	private:
 		std::string const	_name;
 		int					_grade;
-		
-		void	setGrade(int grade);
 
 	public:
-		Bureaucrate();
-		Bureaucrate(std::string name, int grade);
-		Bureaucrate(const Bureaucrate &src);
+		Bureaucrat();
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat &src);
 
-		~Bureaucrate();
+		~Bureaucrat();
+
+		Bureaucrat	&operator=(const Bureaucrat &src);
 
 		std::string	getName() const;
 		int			getGrade() const;
@@ -51,6 +51,6 @@ class Bureaucrate
 		};
 };
 
-std::ostream	&operator<<(std::ostream &o, Bureaucrate &b);
+std::ostream	&operator<<(std::ostream &o, Bureaucrat &b);
 
 # endif
