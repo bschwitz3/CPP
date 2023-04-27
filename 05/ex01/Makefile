@@ -6,13 +6,13 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 14:51:00 by bschwitz          #+#    #+#              #
-#    Updated: 2023/04/26 11:31:21 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/04/27 11:25:21 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		bureaucrat
 
-SRCS =		main.cpp Bureaucrat.cpp
+SRCS =		main.cpp Bureaucrat.cpp Form.cpp
 
 OBJS =		${SRCS:.cpp=.o}
 

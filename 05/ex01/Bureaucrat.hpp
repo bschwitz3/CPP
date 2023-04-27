@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:57:50 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/26 13:30:54 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:24:59 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {

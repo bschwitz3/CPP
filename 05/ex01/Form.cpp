@@ -6,20 +6,20 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 11:46:43 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/26 13:30:49 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:39:13 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 //constructors
-Form::Form(): _name("Default"), _gradeS(1), _gradeE(1), _signed(false)
+Form::Form(): _name("Default"), _signed(false), _gradeS(1), _gradeE(1)
 {
 	std::cout << "Default Form created with grades at 1.";
 }
 
 Form::Form(std::string name, int gradeS, int gradeE) : _name(name),
-	_gradeS(gradeS), _gradeE(gradeE), _signed(false)
+	_signed(false), _gradeS(gradeS), _gradeE(gradeE)
 {
 	checkGrade(this->getGradeS());
 	checkGrade(this->getGradeE());
@@ -55,9 +55,12 @@ std::string	Form::getName() const
 	return (this->_name);
 }
 
-bool	Form::getSigned() const
+std::string	Form::getSigned() const
 {
-	return (this->_signed);
+	if (this->_signed)
+		return ("YES");
+	else
+		return ("NO");
 }
 
 int	Form::getGradeS() const
@@ -89,7 +92,7 @@ void	Form::beSigned(const Bureaucrat &bureaucrat)
 	if (_signed)
 		throw AlreadySignedException();
 	if (_gradeS < bureaucrat.getGrade())
-		throw GradeToLowException();
+		throw GradeToHighException();
 	_signed = true;
 }
 

@@ -6,15 +6,17 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 11:37:49 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/26 13:30:53 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/04/27 11:34:17 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # ifndef FORM_HPP
 # define FORM_HPP
 
-#include <iostream>
-#include "Bureaucrat.hpp"
+# include <iostream>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {
@@ -32,7 +34,7 @@ class Form
 		Form	&operator=(Form const &src);
 
 		std::string	getName() const;
-		bool		getSigned() const;
+		std::string	getSigned() const;
 		int			getGradeS() const;
 		int			getGradeE() const;
 
