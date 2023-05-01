@@ -6,16 +6,16 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 14:51:00 by bschwitz          #+#    #+#              #
-#    Updated: 2023/04/27 14:19:47 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/05/01 13:38:52 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =		bureaucrat
 
 SRCS =		main.cpp Bureaucrat.cpp AForm.cpp \
-			ShrubberyCreation.cpp \
+			ShrubberyCreationForm.cpp \
+			PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardon.cpp
 
 OBJS =		${SRCS:.cpp=.o}
 

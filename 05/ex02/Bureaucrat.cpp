@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:57:47 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/27 11:56:06 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/01 13:50:33 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name), _grade(grade)
 {
 	if (grade < 1)
 		throw GradeTooHighException();
-	if (grade > 150)
+	else if (grade > 150)
 		throw GradeTooLowException();
 	std::cout << "Bureaucrat " << this->getName() << ", created with a grade of "
 	<< this->getGrade() << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src): _name(src.getName()), _grade(src.getGrade())
+Bureaucrat::Bureaucrat(const Bureaucrat &src): _name(src.getName() + "_copy"), _grade(src.getGrade())
 {
 	std::cout << "Bureaucrat " << this->getName() << ", created with a grade of "
 	<< this->getGrade() << std::endl;
@@ -46,7 +46,7 @@ Bureaucrat::~Bureaucrat(void)
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &src)
 {
 	if (this != &src)
-		this->_grade = src._grade;
+		this->_grade = src.getGrade();
 	return (*this);
 }
 
@@ -92,7 +92,7 @@ const char	*Bureaucrat::GradeTooLowException::what() const throw()
 	return ("Bureaucrat grade to low.");
 }
 
-void	Bureaucrat::signAForm(AForm &Aform) const
+void	Bureaucrat::signAForm(AForm &Aform)
 {
 	try
 	{
@@ -103,6 +103,20 @@ void	Bureaucrat::signAForm(AForm &Aform) const
 	{
 		std::cerr << _name << " cannot sign " << Aform.getName() << " because "
 		<< e.what() << std::endl;
+	}
+	
+}
+
+void	Bureaucrat::executeForm(AForm &Aform)
+{
+	try
+	{
+		Aform.execute(*this);
+		std::cout << this->_name << " successfully executed " << Aform.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	
 }

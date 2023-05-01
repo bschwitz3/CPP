@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 11:37:49 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/27 14:29:37 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/01 11:05:31 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <iostream>
 # include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
 
 class Bureaucrat;
 
@@ -37,7 +34,8 @@ class AForm
 		AForm	&operator=(AForm const &src);
 
 		std::string	getName() const;
-		std::string	getSigned() const;
+		bool		getSigned() const;
+		std::string	printGetSigned() const;
 		int			getGradeS() const;
 		int			getGradeE() const;
 

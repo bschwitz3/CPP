@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:57:50 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/27 14:08:22 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/01 10:18:04 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ class Bureaucrat
 				virtual const char	*what() const throw();
 		};
 
-		void	signAForm(AForm &Aform) const;
+		void	signAForm(AForm &Aform);
+
+		void	executeForm(AForm &Aform);
 };
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat &b);

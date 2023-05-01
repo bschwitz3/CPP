@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 12:05:54 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/27 14:26:29 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/01 12:58:23 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "AForm.hpp"
 
 class AForm;
-class Bureaucrate;
 
 class PresidentialPardonForm: public AForm
 {
@@ -28,7 +27,11 @@ class PresidentialPardonForm: public AForm
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(PresidentialPardonForm &src);
 		~PresidentialPardonForm();
-	
+		PresidentialPardonForm	&operator=( const PresidentialPardonForm &src);
+
+		std::string	getTarget() const;
+
+		void	execute(Bureaucrat const &executor) const;
 };
 
 #endif
