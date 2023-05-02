@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 12:35:05 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/02 12:39:28 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:53:30 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,6 @@ int	main(int ac, char **av)
 		std::cerr << "Wrong number of args." << std::endl;
 		return (1);
 	}
-	try
-	{
-		ScalarConverter scalar(av[1]);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	ScalarConverter scalar(av[1]);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 10:34:30 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/02 12:32:39 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:52:59 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,11 @@
 class ScalarConverter
 {
 	private:
-		const std::string	_input;
+		std::string const	_input;
 		int					_int;
 		char				_char;
 		double				_double;
 		float				_float;
-
-		int		to_int(const std::string &input);
-		char	to_char(const std::string &input);
-		double	to_double(const std::string &input);
-		float	to_float(const std::string &input);
 
 	public:
 		ScalarConverter();
@@ -39,9 +34,19 @@ class ScalarConverter
 		std::string	getInput() const;
 
 		void	convert(std::string input);
-		void	printConvertion() const;
 
+		int		to_char(const std::string &input);
+		int		to_int(const std::string &input);
+		int		to_float(const std::string &input);
+		int		to_double(const std::string &input);
+		
 		class ImpossibleConvertion: public std::exception
+		{
+			public:
+				virtual const char	*what() const throw();
+		};
+
+		class NonDisplayable: public std::exception
 		{
 			public:
 				virtual const char	*what() const throw();
