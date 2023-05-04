@@ -6,13 +6,14 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 14:51:00 by bschwitz          #+#    #+#              #
-#    Updated: 2023/05/03 16:50:07 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/05/04 14:07:15 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		scalarconverter
+NAME =		serializer
 
-SRCS =		main.cpp 
+SRCS =		main.cpp \
+			Serializer.cpp
 
 OBJS =		${SRCS:.cpp=.o}
 

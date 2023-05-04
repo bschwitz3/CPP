@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 16:51:03 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/03 17:29:35 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:06:02 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,17 @@
 
 #include <iostream>
 
+typedef struct Data
+{
+	std::string	name;
+	int			age;
+	bool		member;
+} Data;
+
 class Serializer
 {
 private:
-	/* data */
+	
 public:
 	Serializer();
 	~Serializer();
@@ -28,14 +35,5 @@ public:
 	uintptr_t	serialize(Data *ptr);
 	Data	*deserialize(uintptr_t raw);
 };
-
-typedef struct Data
-{
-	std::string	name;
-	int			age;
-	bool		member;
-} Data;
-
-
 
 #endif
