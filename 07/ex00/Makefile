@@ -6,11 +6,11 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/09 17:23:15 by bschwitz          #+#    #+#              #
-#    Updated: 2023/05/09 17:37:43 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/05/09 17:40:20 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		templates
+NAME =		whatever
 
 SRCS =		main.cpp
 
