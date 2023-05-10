@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 17:29:48 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/04 14:12:36 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:23:04 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	main()
 		"age : " << data.age << std::endl << \
 		"is member [0 = no ; 1 = yes] : " << data.member << std::endl << \
 		"data address is : " << &data << std::endl;
+
+	std::cout << std::endl << "New Data created [data_copy] :" << std::endl << \
+		"data_copy address is : " << data_copy << std::endl;
 
 	std::cout << std::endl << "=======================================" << std::endl << std::endl;
 
