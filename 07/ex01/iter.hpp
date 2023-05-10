@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:42:06 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/09 18:40:44 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:21:42 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 template<typename T>
 void	iter(T array[], size_t lenght, void (*foo)(T &))
 {
-	if (!array || !foo)
+	if (!array || !foo || lenght < 1)
 		return;
 	for (size_t i = 0; i < lenght; i++)
 		foo(array[i]);
