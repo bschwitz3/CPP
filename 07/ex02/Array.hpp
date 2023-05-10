@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:45:23 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/10 19:22:19 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/11 00:16:48 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,55 @@ class Array
 		}
 		Array(const Array &ref): _size(ref.size())
 		{
-			std::cout << "New Array from another Array" << std::endl;
+			std::cout << "New Array from another Array with a size of " << this->_size << std::endl;
+			this->_array = NULL;
+			*this = ref;
 		}
-		Array	&operator=(const Array &ref);
+		Array	&operator=(const Array &ref)
+		{
+			if (this->_array != NULL)
+				delete [] this->_array;
+			if (ref.size() != 0)
+			{
+				this->_size = ref.size();
+				this->_array = new T[this->_size];
+				for (unsigned int i = 0; i < this->_size; i++)
+					this->_array[i] = ref._array[i];
+			}
+			return *this;
+		}
+		~Array()
+		{
+			if (this->_array)
+				delete [] this->_array;
+		}
 
+
+		T	&operator[](unsigned int index)
+		{
+			if (index >= this->_size || this->_array == NULL)
+				throw InvalidIndexException();
+			return this->_array[index];
+		}
 
 		class InvalidIndexException : public std::exception
 		{
 			public:
 				virtual const char	*what() const throw();
-		}
+		};
 
 		unsigned int	size() const
 		{
 			return (this->_size);
 		}
 };
+
+template<typename T>
+
+const char	*Array<T>::InvalidIndexException::what() const throw()
+{
+	return ("Invalid index.");
+}
 
 
 
