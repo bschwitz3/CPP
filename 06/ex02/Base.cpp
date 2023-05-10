@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:28:06 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/04 16:44:42 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:39:33 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,5 @@
 
 Base::~Base()
 {
+	std::cout << "Base destroyed" << std::endl;
 }

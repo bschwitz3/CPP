@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 14:30:33 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/04 16:46:56 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/10 13:39:07 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define A_HPP
 
 #include "Base.hpp"
-
-class Base;
 
 class A : public Base
 {
