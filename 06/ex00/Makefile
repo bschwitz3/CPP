@@ -6,11 +6,11 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 14:51:00 by bschwitz          #+#    #+#              #
-#    Updated: 2023/05/02 12:38:17 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/05/10 12:43:28 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		scalarconverter
+NAME =		convert
 
 SRCS =		main.cpp \
 			ScalarConverter.cpp
