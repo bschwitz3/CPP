@@ -6,47 +6,57 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 23:35:45 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/11 00:11:49 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/11 09:49:13 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
-int	main( void )
+#define MAX_VAL 50
+int main(int, char**)
 {
-	Array<int>			intArray;
-	Array<std::string>	stringArray(10);
-	Array<std::string>	stringArray2;
+	Array<int> numbers(MAX_VAL);
+	int* mirror = new int[MAX_VAL];
+	srand(time(NULL));
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		const int value = rand();
+		numbers[i] = value;
+		mirror[i] = value;
+	}
+	//SCOPE
+	Array<int> tmp = numbers;
+	Array<int> test(tmp);
 
-	stringArray[0] = "Salut";
-	stringArray[1] = "ça";
-	stringArray[2] = "va";
-	stringArray[3] = "mon";
-	stringArray[4] = "pote";
-	stringArray[5] = "?";
-	std::cout << "intArray.size() = " << intArray.size() << std::endl;
-	std::cout << "stringArray.size() = " << stringArray.size() << std::endl;
-	stringArray2 = stringArray;
-	stringArray2[3] = "ça roule merci !";
+	for (int i = 0; i < MAX_VAL; i++)
+	{
+		if (mirror[i] != numbers[i] || numbers[i] != tmp[i] || tmp[i] != test[i])
+		{
+			std::cerr << "didn't save the same value!!" << std::endl;
+			return 1;
+		}
+		std::cout << "numbers[" << i << "] = " << numbers[i] << "\t\t" \
+		<< "mirror[" << i << "] = " << mirror[i] << "\t\t" \
+		<< "tmp[" << i << "] = " << tmp[i] << "\t\t" \
+		<< "test[" << i << "] = " << test[i] << "\t\t" << std::endl;
+	}
+
+	std::cout << std::endl << "============================================" << std::endl << std::endl;
 
 	try
 	{
-		// std::cout << stringArray[59] << std::endl;
-		// std::cout << stringArray2[-3] << std::endl;
-		std::cout << stringArray2[0] << std::endl;
-		std::cout << stringArray2[1] << std::endl;
-		std::cout << stringArray2[2] << std::endl;
-		std::cout << stringArray2[3] << std::endl;
-		std::cout << stringArray2[4] << std::endl;
-		std::cout << stringArray2[5] << std::endl;
-		std::cout << stringArray2[6] << std::endl;
-		std::cout << stringArray2[7] << std::endl;
-
+		int i = 5;
+		numbers[i] = 0;
+		std::cout << "numbers[" << i << "] = " << numbers[i] << "\t\t" \
+		<< "mirror[" << i << "] = " << mirror[i] << "\t\t" \
+		<< "tmp[" << i << "] = " << tmp[i] << "\t\t" \
+		<< "test[" << i << "] = " << test[i] << "\t\t" << std::endl;
 	}
-	catch (std::exception &e)
+	catch(const std::exception& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << '\n';
 	}
 
+	delete [] mirror;//
 	return 0;
 }

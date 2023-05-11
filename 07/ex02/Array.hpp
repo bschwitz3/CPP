@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:45:23 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/11 00:16:48 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/11 09:30:28 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,10 @@ class Array
 		}
 		~Array()
 		{
+			std::cout << "Array destroyed." << std::endl;
 			if (this->_array)
 				delete [] this->_array;
 		}
-
 
 		T	&operator[](unsigned int index)
 		{
