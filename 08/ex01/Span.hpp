@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:06:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/12 15:24:57 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/20 01:59:25 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,17 @@ class Span
 		Span	&operator=(const Span &src);
 		~Span();
 
+		unsigned int		getSize() const;
+		std::vector<int>	getVector() const;
+
 		void	addNumber(int number);
 
 		unsigned int	shortestSpan() const;
 		unsigned int	longestSpan() const;
 
 		void	fill(void);
+		
+		void	printIt();
 
 		class SpanIsFullException: public std::exception
 		{
@@ -61,7 +66,6 @@ class Span
 					return ("Span has only one element.");
 				}
 		};
-		
 };
 
 
