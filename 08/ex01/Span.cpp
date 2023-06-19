@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:07:27 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/19 12:26:25 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:54:14 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ unsigned int	Span::shortestSpan() const
 		if (copy[i + 1] - copy[i] < res)
 			res = copy[i + 1] - copy[i];
 	}
-	std::cout << "The shortest span is " << res << std::endl;
+	//std::cout << "The shortest span is " << res << std::endl;
 	return (res);
 }
 
@@ -88,11 +88,35 @@ unsigned int	Span::longestSpan() const
 	std::vector<int> copy = this->_v;
 	std::sort(copy.begin(), copy.end());
 	res = copy.back() - copy.front();
-	std::cout << "The longest span is " << res << std::endl;
+	//std::cout << "The longest span is " << res << std::endl;
 	return (res);
 }
 
 
+// static	int	randomInt(size_t size)
+// {
+// 	int i;
+
+// 	srand((unsigned)time(0));
+// 	i = (rand() % size) + 1;
+// 	return (i);
+// }
+
+void	Span::fill(void)
+{
+	size_t	start;
+	int i;
+
+	start = _v.size();
+	while (start < _size)
+	{
+		usleep(50);
+		srand((unsigned)time(0));
+		i = rand() % (_size * 10);
+		_v.push_back(i);
+		start++;
+	}
+}
 
 
 void	Span::printIt()
