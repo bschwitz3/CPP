@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:07:27 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/20 01:59:23 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/19 12:26:25 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,39 @@ void	Span::addNumber(int number)
 
 unsigned int	Span::shortestSpan() const
 {
-	
+	int res;
+
+	if (this->_v.empty())
+		throw SpanIsEmptyException();
+	else if (this->_v.size() == 0)
+		throw SpanOneException();
+	std::vector<int> copy = this->_v;
+	std::sort(copy.begin(), copy.end());
+	std::vector<int>::iterator start_it = copy.begin();
+	res = start_it[1] - start_it[0];
+	for(unsigned long i = 0; i + 1 != copy.size(); i++)
+	{
+		if (copy[i + 1] - copy[i] < res)
+			res = copy[i + 1] - copy[i];
+	}
+	std::cout << "The shortest span is " << res << std::endl;
+	return (res);
 }
 
+unsigned int	Span::longestSpan() const
+{
+	int res;
 
+	if (this->_v.empty())
+		throw SpanIsEmptyException();
+	else if (this->_v.size() == 0)
+		throw SpanOneException();
+	std::vector<int> copy = this->_v;
+	std::sort(copy.begin(), copy.end());
+	res = copy.back() - copy.front();
+	std::cout << "The longest span is " << res << std::endl;
+	return (res);
+}
 
 
 
