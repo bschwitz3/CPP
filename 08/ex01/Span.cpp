@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:07:27 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/19 12:54:14 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/21 11:08:47 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,29 +92,18 @@ unsigned int	Span::longestSpan() const
 	return (res);
 }
 
-
-// static	int	randomInt(size_t size)
-// {
-// 	int i;
-
-// 	srand((unsigned)time(0));
-// 	i = (rand() % size) + 1;
-// 	return (i);
-// }
-
 void	Span::fill(void)
 {
 	size_t	start;
 	int i;
 
 	start = _v.size();
-	while (start < _size)
+	srand(time(0));
+	for (size_t start = _v.size(); start < _size; start++)
 	{
 		usleep(50);
-		srand((unsigned)time(0));
-		i = rand() % (_size * 10);
+		i = (rand() % ((_size) * 10)) + 1;
 		_v.push_back(i);
-		start++;
 	}
 }
 
