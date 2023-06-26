@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:07:27 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/21 11:08:47 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:27:19 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ unsigned int	Span::shortestSpan() const
 
 	if (this->_v.empty())
 		throw SpanIsEmptyException();
-	else if (this->_v.size() == 0)
+	else if (this->_v.size() == 1)
 		throw SpanOneException();
 	std::vector<int> copy = this->_v;
 	std::sort(copy.begin(), copy.end());
@@ -83,7 +83,7 @@ unsigned int	Span::longestSpan() const
 
 	if (this->_v.empty())
 		throw SpanIsEmptyException();
-	else if (this->_v.size() == 0)
+	else if (this->_v.size() == 1)
 		throw SpanOneException();
 	std::vector<int> copy = this->_v;
 	std::sort(copy.begin(), copy.end());
