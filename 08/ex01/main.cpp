@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:07:43 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/26 10:27:46 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:57:12 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main()
 	// 	std::cerr << e.what() << std::endl;
 	// }
 	
-	Span	span2(10);
+	Span	span2(10000);
 
 	try
 	{

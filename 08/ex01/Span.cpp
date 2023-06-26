@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:07:27 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/26 10:27:19 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:57:38 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	Span::fill(void)
 	for (size_t start = _v.size(); start < _size; start++)
 	{
 		usleep(50);
-		i = (rand() % ((_size) * 10)) + 1;
+		i = (rand() % ((_size) * 100)) + 1;
 		_v.push_back(i);
 	}
 }

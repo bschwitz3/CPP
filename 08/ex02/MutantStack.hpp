@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 11:15:46 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/21 12:30:17 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/26 10:49:33 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ class MutantStack : public std::stack<T>
 		MutantStack()
 		{}
 		MutantStack(const MutantStack &src): stack(src)
-		{}
+		{
+			*this = src;
+		}
 		~MutantStack()
 		{}
 		MutantStack	&operator=(const MutantStack &src)
