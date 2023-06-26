@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 15:32:51 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/26 17:20:13 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/26 19:32:00 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ int	main	(int ac, char **av)
 	}
 	Bitcoin	btc("data.csv");
 	btc.Exchange(av[1]);
-
-	(void)av[1];
-
+ 
 	return (0);
 }
