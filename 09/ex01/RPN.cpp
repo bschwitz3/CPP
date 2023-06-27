@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 21:54:46 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/26 23:00:47 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/27 14:56:09 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ int	RPN::caluculRPN(std::string input)
 		else
 			throw WrongArguments();
 	}
-	if (_stack.size() != 1)
-		throw Impossible();
 	return (_stack.top());
 }
 
