@@ -1,5 +1,5 @@
 # CPP
-june 2023,
+june 2023, 
 
 **CPP Modules 00 - 09 : Your Journey into Object-Oriented Programming! 🚀**
 
