@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 12:07:40 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/01 12:58:20 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:09:55 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ std::string	PresidentialPardonForm::getTarget(void) const
 
 void	PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
-	if ((int)executor.getGrade() > this->getGradeE())
+	if (executor.getGrade() > this->getGradeE())
 		throw (Bureaucrat::GradeTooLowException());
 	else if (!this->getSigned())
 		throw (AForm::FormNotSignedException());

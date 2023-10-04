@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 16:02:42 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/01/24 16:34:29 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:05:31 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-	std::string	str = "HI THIS IS BRAIN";	//• Une variable de type string initialisée à "HI THIS IS BRAIN".
+	std::string	str = "HI THIS IS BRAIN";			//• Une variable de type string initialisée à "HI THIS IS BRAIN".
 	std::string	*stringPTR = &str;					//• stringPTR : Un pointeur sur la string.
 	std::string	&stringREF	= str;					//• stringREF : Une référence sur la string.
 

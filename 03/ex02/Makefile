@@ -6,7 +6,7 @@
 #    By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 17:17:55 by bschwitz          #+#    #+#              #
-#    Updated: 2023/02/19 10:40:07 by bschwitz         ###   ########.fr        #
+#    Updated: 2023/02/19 10:56:16 by bschwitz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,6 @@ OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-
 NAME = claptrap
 
 all: $(NAME)

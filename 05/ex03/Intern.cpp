@@ -6,14 +6,14 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 14:47:59 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/01 18:23:14 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:24:09 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
 const std::string	Intern::names[3] = {"shrubbery", "robotomy", "presidential"};
-const CF			Intern::forms[3] = {&Intern::ShrubberyCreation, &Intern::RobotomyRequest, &Intern::PresidentialPardon};
+const TF			Intern::forms[3] = {&Intern::ShrubberyCreation, &Intern::RobotomyRequest, &Intern::PresidentialPardon};
 
 Intern::Intern()
 {

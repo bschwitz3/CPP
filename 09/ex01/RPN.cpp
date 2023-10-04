@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 21:54:46 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/27 14:56:09 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:21:49 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,14 @@ int	RPN::caluculRPN(std::string input)
 		}
 		else if (token == "+" || token == "-" || token == "*" || token == "/")
 		{
+			if (_stack.size() < 2)
+				throw Impossible();
 			int	op1 = _stack.top();
 			_stack.pop();
 			int	op2 = _stack.top();
 			_stack.pop();
+
+
 
 			if (token == "+")
 				_stack.push(op1 + op2);

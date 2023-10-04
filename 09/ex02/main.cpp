@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:24:30 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/27 17:38:12 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:43:01 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ double	launchProcess(T &c)
 	std::clock_t start = clock();
 	pmergeMe.Process(c);
 	std::clock_t end = clock();
-	return (10000000.0 * (end - start) / CLOCKS_PER_SEC);
+	return (end - start);
 }
 
 int	main(int ac, char **av)

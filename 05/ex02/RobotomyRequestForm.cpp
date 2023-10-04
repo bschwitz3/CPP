@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 12:06:41 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/05/01 14:05:05 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:11:43 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	else if (!this->getSigned())
 		throw (AForm::FormNotSignedException());
 	std::cout << "BRRRRRRRRRRRRRR (loud drilling noises)" << std::endl;
-	srand(time(nullptr));
+	std::srand(std::time(nullptr));
 	int	random = std::rand() % 2;
 	if (random)
 		std::cout << this->_target << " has been robotomized" << std::endl;

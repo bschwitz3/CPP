@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 14:57:38 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/04/27 11:42:04 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:28:25 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main()
 		Bureaucrat b2("Mark", 50);
 		Bureaucrat b3("Jo", 25);
 		Form f1("formulaire", 30, 3);
-		Form f2("questionnaire", -3, 14);
+		Form f2("questionnaire", 3, 14);
 
 		std::cout << std::endl;
 

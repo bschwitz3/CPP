@@ -6,7 +6,7 @@
 /*   By: bschwitz <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:59:05 by bschwitz          #+#    #+#             */
-/*   Updated: 2023/06/27 17:34:02 by bschwitz         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:48:36 by bschwitz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 template<class T>
 void	PmergeMe<T>::mergeInsertSort(T& c, int start, int end, int cut)
 {
-	cut = _cut;
 	if (start < end)
 	{
 		if (end - start < cut)
@@ -36,8 +35,7 @@ void	PmergeMe<T>::insertSort(T &c, int start, int end)
 	for (int i = start + 1; i <= end; ++i)
 	{
 		int key = c[i];
-		int j = i - 1;
-		for (; j >= start && c[j] > key; --j)
+		for (int j = i - 1; j >= start && c[j] > key; --j)
 			c[j + 1] = c[j];
 		c[j + 1] = key;
 	}
